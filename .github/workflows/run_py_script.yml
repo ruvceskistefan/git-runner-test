@@ -1,16 +1,16 @@
 name: run python script
   # Controls when the workflow will run
-  on:
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
-  jobs:
-    build:
-      runs-on: self-hosted
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: self-hosted
 
-      steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
-        
-        -name: execute python script
-          run: |
-            python scripts/hello.py
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      -name: execute python script
+        run: |
+          python scripts/hello.py
