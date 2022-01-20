@@ -19,6 +19,8 @@ jobs:
         #run: |
           #apt update && apt install python3 -y && ln -s /usr/bin/python3 /usr/bin/python
       - name: Python test here
-        shell: python
         run: |
-          print('Python did run this.')
+          python scripts/hello.py
+        #shell: python
+        #run: |
+          #print('Python did run this.')
