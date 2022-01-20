@@ -1,0 +1,9 @@
+name: run python script
+  jobs:
+    build:
+      runs-on: self-hosted
+
+      steps:
+        -name: execute python script
+          run: |
+            python scripts/hello.py
