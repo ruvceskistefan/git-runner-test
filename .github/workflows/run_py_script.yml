@@ -8,6 +8,9 @@ name: run python script
       runs-on: self-hosted
 
       steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        
         -name: execute python script
           run: |
             python scripts/hello.py
