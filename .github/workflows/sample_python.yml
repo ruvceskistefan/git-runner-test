@@ -20,7 +20,7 @@ jobs:
           #apt update && apt install python3 -y && ln -s /usr/bin/python3 /usr/bin/python
       - name: Python test here
         run: |
-          python scripts/env_example.py
+          python3 scripts/env_example.py
         #shell: python
         #run: |
           #print('Python did run this.')
