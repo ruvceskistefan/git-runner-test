@@ -1,4 +1,5 @@
-import environ
+#import environ
+from os import environ
 
 with open(environ['GITHUB_ENV'], 'a') as f:
   subcomment = "some subcomment test test test"
