@@ -2,3 +2,6 @@ nothing smart
 nothing smart
 this is stupid test file
 nothing smart
+nothing smart
+this is nothing smart
+just a fucking test file
