@@ -1,0 +1,15 @@
+name: Pull Request bug demonstration
+on:
+  pull_request:
+    types: [ opened, reopened, edited ]
+jobs:
+  check-pr-template:
+    name: Check pull request template
+    runs-on: ubuntu-20.04
+    steps:
+      - id: verify-bug
+        name: Verify bug
+        run: |-
+          hexdump -C <<\EOF
+          ${{ github.event.pull_request.body }}
+          EOF
