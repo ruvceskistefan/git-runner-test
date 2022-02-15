@@ -1,0 +1,22 @@
+name: Reproducing GitHub Env Issue
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: self-hosted
+
+    steps:
+    - run: python3 -u scripts/hello.py
+    
+  second_job:
+    runs-on: self-hosted
+
+    steps:
+    - run: python3 -u scripts/hello.py
+  
+  third_job:
+    runs-on: self-hosted
+
+    steps:
+    - run: python3 -u scripts/hello.py
