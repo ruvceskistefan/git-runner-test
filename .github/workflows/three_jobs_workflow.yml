@@ -1,4 +1,4 @@
-name: Reproducing GitHub Env Issue
+name: Reproducing issue 1681
 on:
   workflow_dispatch:
 
