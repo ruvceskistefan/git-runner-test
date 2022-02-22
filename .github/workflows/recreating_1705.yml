@@ -1,4 +1,4 @@
-name: CI
+name: Recreating issue 1705
 
 on:
   workflow_dispatch:
