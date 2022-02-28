@@ -1,0 +1,6 @@
+runs-on: ubuntu-latest
+container:
+  image: python:3.10-bullseye
+steps:
+- name: Debug Shell
+  run: echo $0
