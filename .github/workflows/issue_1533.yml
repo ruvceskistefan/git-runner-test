@@ -1,6 +1,11 @@
-runs-on: ubuntu-latest
-container:
-  image: python:3.10-bullseye
-steps:
-- name: Debug Shell
-  run: echo $0
+name: Reproducing Issue 1533
+on:
+  workflow_dispatch:
+
+job:
+  runs-on: ubuntu-latest
+  container:
+    image: python:3.10-bullseye
+  steps:
+  - name: Debug Shell
+    run: echo $0
