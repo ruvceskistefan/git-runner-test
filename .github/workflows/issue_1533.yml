@@ -5,8 +5,12 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    container:
-      image: python:3.10-bullseye
     steps:
     - name: Debug Shell
       run: echo $0
+    - name: Debug Bash Shell
+      run: echo $0
+      shell: bash
+    - name: Debug sh Shell
+      run: echo $0
+      shell: sh
