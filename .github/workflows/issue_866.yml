@@ -1,4 +1,4 @@
-name: Use double quotes
+name: Issue 866 - use double quotes
 on:
     workflow_dispatch:
 
@@ -9,5 +9,5 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: Echo hello world
-              if: github.event_name != 'workflow_dispatch'
+              if: github.event_name == 'workflow_dispatch'
               run: echo "Hello world!"
