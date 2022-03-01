@@ -20,7 +20,7 @@ jobs:
             key2: val9
             key3: val10
         exclude:
-          - {attr2: {key1: val7, key2: val8, key3: val9}}
+          - {attr2: {key1: val5, key2: val6, key3: val7}}
 
     steps:
       - run: |
