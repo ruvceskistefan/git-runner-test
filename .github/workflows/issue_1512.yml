@@ -20,9 +20,8 @@ jobs:
             key2: val9
             key3: val10
         exclude:
-          - attr1:
-            - key1: val1
-              key2: val2
+          - {attr1: {key1: val1, key2: val2}}
+
     steps:
       - run: |
           echo ${{ matrix.attr1.key1 }}
