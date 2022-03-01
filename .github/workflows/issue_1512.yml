@@ -7,15 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        key1: [val1, val3, val5, val8]
-        key2: [val2, val4, val6, val8]
-        key3: [val7, val10]
-        exclude:
+        attr1:
           - key1: val1
             key2: val2
+          - key1: val3
+            key2: val4
+        attr2:
+          - key1: val5
+            key2: val6
+            key3: val7
+          - key1: val8
+            key2: val9
+            key3: val10
+        exclude:
+          - {attr1: {key1: val1, key2: val2}}
 
     steps:
       - run: |
-          echo ${{ matrix.key1 }}
-          echo ${{ matrix.key2 }}
-          echo ${{ matrix.key3 }}
+          echo ${{ matrix.attr1.key1 }}
+          echo ${{ matrix.attr1.key2 }}
+          echo ${{ matrix.attr2.key1 }}
+          echo ${{ matrix.attr2.key2 }}
+          echo ${{ matrix.attr2.key3 }}
