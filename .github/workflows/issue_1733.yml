@@ -1,0 +1,18 @@
+name: Refresh Feed
+on:
+  workflow_dispatch:
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+  
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@releases/v2
+        with:
+          endpoint: https://api.scryfall.com/catalog/card-names
+          configuration: '{ "method": "GET" }'
+          save-location: assets
+          save-name: test
+          set-output: false
