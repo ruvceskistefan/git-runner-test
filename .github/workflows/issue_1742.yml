@@ -8,4 +8,4 @@ jobs:
     
     steps:
       - name: Test annotations in composite action
-        uses: ruvceskistefan/composite-action-test@main
+        uses: ruvceskistefan/composite-actions-test@main
