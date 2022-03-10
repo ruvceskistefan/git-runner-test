@@ -1,6 +1,5 @@
 name: 'Issue 1742: annotation example'
-on:
-  workflow_dispatch:
+description: Test annotations
 runs:
   using: "composite"
   steps:
