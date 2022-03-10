@@ -1,0 +1,11 @@
+name: Reproducing issue 1742
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Test annotations in composite action
+      - uses: ruvceskistefan/composite-action-test@main
