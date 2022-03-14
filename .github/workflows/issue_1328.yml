@@ -1,0 +1,12 @@
+name: Reproducing issue 1328
+
+runs-on:
+  workflow-dispatch:
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: bash
+        shell: bash
+        step: ls -la
