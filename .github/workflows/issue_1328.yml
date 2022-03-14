@@ -1,7 +1,7 @@
 name: Reproducing issue 1328
 
-runs-on:
-  workflow-dispatch:
+on:
+  workflow_dispatch:
   
 jobs:
   build:
