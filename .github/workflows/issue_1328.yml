@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: bash
+      - name: bash mkdir
+        shell: bash
+        run: mkdir test
+      - name: bash ls
         shell: bash
         run: ls -la
