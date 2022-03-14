@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: bash
         shell: bash
-        step: ls -la
+        run: ls -la
