@@ -1,0 +1,11 @@
+name: Hello world
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: self-hosted
+
+    steps:
+    - run: exho "Hello world!"
+    
