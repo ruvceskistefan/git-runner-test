@@ -1,7 +1,7 @@
-name: Validate simple FIFO driver
+name: Reproducing issue 1774
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   ubuntu-20-04-x86-gcc:
