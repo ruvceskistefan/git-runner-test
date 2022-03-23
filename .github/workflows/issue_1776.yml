@@ -1,4 +1,4 @@
-name: Validate
+name: Reproducing issue 1776
 
 on:
   workflow_dispatch:
