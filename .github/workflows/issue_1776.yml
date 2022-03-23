@@ -1,0 +1,54 @@
+name: Validate
+
+on:
+  workflow_dispatch:
+    inputs:
+      app-name:
+        description: App Name
+        required: true
+        type: string
+      app-facturacion:
+        description: ¿Habilitar Facturación Electrónica?
+        default: false
+        type: boolean
+      app-nomina:
+        description: ¿Habilitar Nómina Electrónica?
+        default: false
+        type: boolean
+      app-url-dian:
+        description: URL Token Dian (requerido si alguno de los 2 anteriores ha sido chequeado)
+        type: string
+      client-nit:
+        description: Cliente - Nit
+        type: string
+        required: true
+      client-email:
+        description: Cliente - Email
+        type: string
+      client-regimen:
+        description: Cliente - Régimen Tributario
+        default: 'RESPONSABLE DE IVA'
+        type: choice
+        options:
+        - RESPONSABLE DE IVA
+        - GRAN CONTRIBUYENTE
+        - NO RESPONSABLE DE IVA
+      client-autoretenedor:
+        description: Cliente - Autoretenedor
+        default: false
+        type: boolean
+      client-ciuu:
+        description: Cliente - Actividad Económica
+        type: string
+      client-city:
+        description: Cliente - Ciudad
+        type: string
+
+jobs:
+  validate-data:
+    name: ✅ Validate
+    runs-on: self-hosted
+    steps:
+    - name: Parámetros de entrada
+      run: |
+        echo "Parámetros de entrada: ${{ toJSON(github.event.inputs) }}"
