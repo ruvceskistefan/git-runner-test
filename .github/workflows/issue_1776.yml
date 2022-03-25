@@ -44,12 +44,13 @@ on:
         description: Cliente - Ciudad
         type: string
 
+env:
+  PARAMS_ENTERED: ${{ github.event.inputs }}
+
 jobs:
   validate-data:
     name: ✅ Validate
     runs-on: self-hosted
     steps:
     - name: Parámetros de entrada
-      env:
-        PARAMS_ENTERED: ${{ github.event.inputs }}
       run: echo $PARAMS_ENTERED
