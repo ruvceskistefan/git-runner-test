@@ -50,5 +50,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Parámetros de entrada
+      env:
+        PARAMS_ENTERED: ${{github.event.inputs}}
       run: |
-        echo "Parámetros de entrada: ${{ toJSON(github.event.inputs) }}"
+        echo "Parámetros de entrada: $PARAMS_ENTERED"
