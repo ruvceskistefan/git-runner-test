@@ -50,6 +50,6 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Parámetros de entrada
-      run: echo $PARAMS_ENTERED
       env:
-        PARAMS_ENTERED: ${{github.event.inputs}}
+        PARAMS_ENTERED: ${{ github.event.inputs }}
+      run: echo $PARAMS_ENTERED
