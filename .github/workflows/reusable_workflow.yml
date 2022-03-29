@@ -5,13 +5,4 @@ on:
 
 jobs:
   call-workflow:
-    runs-on: self-hosted
-    uses: octo-org/example-repo/.github/workflows/workflow-A.yml@v1
-
-  call-workflow-passing-data:
-    runs-on: self-hosted
-    uses: octo-org/example-repo/.github/workflows/workflow-B.yml@main
-    with:
-      username: mona
-    secrets:
-      token: ${{ secrets.TOKEN }}
+    uses: ruvceskistefan/reusable-workflows/.github/workflows/hello_world.yml@main
