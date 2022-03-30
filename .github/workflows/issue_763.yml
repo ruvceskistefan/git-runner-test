@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Enable problem matcher
-        run: echo "::add-matcher::.github/problem-matchers/eslint.json"
+        run: echo "::add-matcher::.github/problem_matchers/multiline_matcher.json"
 
       - name: Run linter
         run: npm run lint
