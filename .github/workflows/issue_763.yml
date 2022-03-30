@@ -1,0 +1,20 @@
+name: PR Linting
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.13.1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Enable problem matcher
+        run: echo "::add-matcher::.github/problem-matchers/eslint.json"
+
+      - name: Run linter
+        run: npm run lint
