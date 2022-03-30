@@ -1,4 +1,4 @@
-name: PR Linting
+name: Reproducing issue 763
 
 on:
   workflow_dispatch:
