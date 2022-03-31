@@ -7,9 +7,19 @@ jobs:
   test:
     runs-on: 'ubuntu-latest'
     steps:
+       # Step 1 Broken
+      - name: Printing through env var does not
+        run: |
+          echo "Event path (env var): $EVENT_PATH"
+        env:
+          EVENT_PATH: ${{ github.event_path }}
+      
+      # Step 2 Always works
       - name: Printing through context works
         run: |
           echo "Event path: ${{ github.event_path }}"
+          
+      # Step 3 Working 
       - name: Printing through env var does not
         run: |
           echo "Event path (env var): $EVENT_PATH"
