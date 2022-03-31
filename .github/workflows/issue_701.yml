@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Printing through context works
         run: |
-          echo ${{ github.event_path }}
+          echo "Event path: ${{ github.event_path }}"
       - name: Printing through env var does not
         run: |
-          echo $EVENT_PATH
+          echo "Event path (env var): $EVENT_PATH"
         env:
           EVENT_PATH: ${{ github.event_path }}
