@@ -1,0 +1,17 @@
+name: Reproducing issue 701
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  test:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Printing through context works
+        run: |
+          echo ${{ github.event_path }}
+      - name: Printing through env var does not
+        run: |
+          echo $EVENT_PATH
+        env:
+          EVENT_PATH: ${{ github.event_path }}
