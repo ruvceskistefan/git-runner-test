@@ -4,7 +4,7 @@ on:
 
 jobs:
   first_job:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     steps:
     - name: STDERR redirection test
