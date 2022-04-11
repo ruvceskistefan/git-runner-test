@@ -1,0 +1,11 @@
+name: Reproducing issue 1076
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: self-hosted
+
+    steps:
+    - name: STDERR redirection test
+      run: $E = $(Write-Error "oops" 2>&1)
