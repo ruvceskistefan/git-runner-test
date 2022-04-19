@@ -1,4 +1,4 @@
-name: Reproducing issue 1830 - pass
+name: Reproducing issue 1830 pass
 
 on:
   push:
