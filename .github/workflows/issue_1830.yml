@@ -16,4 +16,4 @@ jobs:
   common-assertions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $SOMETHING_STUPID
+      - run: print("make error on purpose...")
