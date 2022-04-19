@@ -16,4 +16,4 @@ jobs:
   common-assertions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "reproducing issue 1830"
+      - run: echo $SOMETHING_STUPID
