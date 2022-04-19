@@ -16,4 +16,4 @@ jobs:
   common-assertions:
     runs-on: ubuntu-latest
     steps:
-      - run: print("fail on purpose...")
+      - run: echo "fail on purpose..."
