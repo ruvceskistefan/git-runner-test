@@ -1,4 +1,4 @@
-name: Reproducing issue 1830
+name: Reproducing issue 1830 - fail
 
 on:
   push:
