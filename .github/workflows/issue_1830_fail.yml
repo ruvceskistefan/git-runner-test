@@ -1,0 +1,19 @@
+name: Reproducing issue 1830
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+  workflow_dispatch: # Run with Run Workflow button in GitHub Action Job.
+    
+    inputs:
+      is_manual_cd:
+        default: true
+        description: Manual trigger
+
+jobs:
+  common-assertions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: print("fail on purpose...")
