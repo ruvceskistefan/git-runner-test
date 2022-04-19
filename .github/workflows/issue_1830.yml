@@ -16,4 +16,4 @@ jobs:
   common-assertions:
     runs-on: ubuntu-latest
     steps:
-      - run: print("make error on purpose...")
+      - run: echo "Reproducing issue 1830"
