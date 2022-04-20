@@ -7,12 +7,19 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        include:
+          - os: ubuntu-latest
+            name: "ubuntu"
+          - os: macos-latest
+            name: "macOS"
         os: [ubuntu-latest, macos-latest]
     outputs:
       output1: ${{ steps.step1.outputs.test }}
     steps:
       - id: step1
-        run: echo "::set-output name=test::hello world"
+        env:
+          OS: ${{ matrix.name }}
+        run: echo "::set-output name=test::hello world from $OS"
       
   job2:
     runs-on: ubuntu-latest
