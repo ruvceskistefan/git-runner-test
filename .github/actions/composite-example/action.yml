@@ -1,0 +1,6 @@
+name: 'Composite action example for issue 1877'
+description: 'Build the API'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Hello world!"
