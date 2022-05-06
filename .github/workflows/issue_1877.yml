@@ -11,4 +11,4 @@ jobs:
       - name: Checkout repo code
         uses: actions/checkout@v3
       # Configure Environments
-      - uses: actions/composite-example@main
+      - uses: .github/actions/composite-example@main
