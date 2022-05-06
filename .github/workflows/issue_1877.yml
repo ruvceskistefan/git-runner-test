@@ -1,5 +1,5 @@
 # Main Workflow
-name: Deploy
+name: Reproducing issue 1877 (composite)
 on:
   workflow_dispatch:
 
