@@ -1,0 +1,10 @@
+name: test PR 1794 that should resolve couple of issues
+on: push
+jobs:
+  test:
+    runs-on: [self-hosted, linux]
+    steps:
+    - uses: actions/checkout@v3
+    - run: echo "myenvvar=val1" > $GITHUB_ENV
+      shell: bash
+    - uses: ./
