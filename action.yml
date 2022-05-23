@@ -1,9 +1,9 @@
-runs:
-  using: composite
+using: "composite"
   steps:
-  - run: echo "myenvvar=val2" > $GITHUB_ENV
-    shell: bash
-  # The following step fails on actions/runner prior these changes
-  - run: exit 1
-    if: env.myenvvar != 'val2'
-    shell: bash
+    - name: set env
+      shell: bash
+      run: |
+        VAR1=$RANDOM
+        echo "MY_VAR1=$(echo $VAR1)" >> $GITHUB_ENV
+        echo $VAR1
+        echo 'create finished'
