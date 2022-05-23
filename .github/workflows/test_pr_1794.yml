@@ -8,3 +8,5 @@ jobs:
     - run: echo "myenvvar=val1" > $GITHUB_ENV
       shell: bash
     - uses: ./
+      env:
+        myenvvar: val1
