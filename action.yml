@@ -7,3 +7,13 @@ using: "composite"
         echo "MY_VAR1=$(echo $VAR1)" >> $GITHUB_ENV
         echo $VAR1
         echo 'create finished'
+
+# Show ref information
+    - name: Show ref information
+      run: |
+          echo 'random1'
+          echo $MY_VAR1
+          echo 'env-random1'
+          echo "${{ env.MY_VAR1 }}"
+          echo 'read finished'
+      shell: bash
