@@ -8,5 +8,4 @@ jobs:
     - run: echo "myenvvar=val1" > $GITHUB_ENV
       shell: bash
     - uses: ./.github/actions/composite
-      env:
-        myenvvar: val1
+    - uses: ./.github/actions/composite
