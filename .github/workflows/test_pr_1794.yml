@@ -2,7 +2,7 @@ name: test PR 1794 that should resolve couple of issues
 on: workflow_dispatch
 jobs:
   test:
-    runs-on: [self-hosted, linux]
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
     - run: echo "myenvvar=val1" > $GITHUB_ENV
