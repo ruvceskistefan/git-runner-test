@@ -1,4 +1,4 @@
-name: Prepare Job Ports
+name: Prepare Job Multiple Services
 on:
   workflow_dispatch:
 jobs:  
