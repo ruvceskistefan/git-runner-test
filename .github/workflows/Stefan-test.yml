@@ -1,0 +1,32 @@
+name: Prepare Job Ports
+on:
+  workflow_dispatch:
+jobs:  
+  ports:  
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [hook, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    container: 
+      image: node
+      env:
+        TEST_ENV: test123
+      ports: 
+        - 8080:80/tcp
+      volumes:
+        - /home/test:/home/test/
+      options: --cpus 1
+    services:
+      redis1:
+        image: redis
+        ports:
+          - 83:41/tcp
+      redis2:
+        image: redis
+        ports:
+          - 84:42/tcp
+    steps:
+      - run: echo '${{ toJson(job.container) }}'
+      - run: echo '${{ toJson(job.services.redis1) }}'
+      - run: echo '${{ toJson(job.services.redis2) }}'
