@@ -1,0 +1,28 @@
+name: Standalone Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main-workflow:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout source code from Github
+        uses: actions/checkout@v3
+
+      - name: Setup
+        shell: bash
+        run: |
+          echo "Set up the composite action"
+          echo "Set up the composite action" >> $GITHUB_STEP_SUMMARY
+
+      - name: Another arbitrary non-relevant step
+        shell: bash
+        run: |
+          echo "Ignore me"
+
+      - name: Wrap Up
+        shell: bash
+        run: |
+          echo "Wrap up the composite action"
+          echo "Wrap up the composite action" >> $GITHUB_STEP_SUMMARY
