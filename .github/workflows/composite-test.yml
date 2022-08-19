@@ -5,7 +5,7 @@ on:
 
 jobs:
   main-workflow:
-    runs-on: [ubuntu-latest]
+    runs-on: self-hosted
     steps:
       - name: Checkout source code from Github
         uses: actions/checkout@v3
