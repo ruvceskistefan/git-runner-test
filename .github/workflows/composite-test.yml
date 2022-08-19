@@ -1,0 +1,13 @@
+name: Composite Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main-workflow:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout source code from Github
+        uses: actions/checkout@v3
+
+      - uses: ./composite
