@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   job1:
-    runs-on: [ windows]
+    runs-on: [ self-hosted]
     #runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.step1.outputs.test }}
