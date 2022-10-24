@@ -1,32 +1,22 @@
-name: Prepare Job Multiple Services
+name: issue 2224 test
 on:
   workflow_dispatch:
-jobs:  
-  ports:  
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [hook, ubuntu-latest]
-    runs-on: ${{ matrix.os }}
-    container: 
-      image: node
-      env:
-        TEST_ENV: test123
-      ports: 
-        - 8080:80/tcp
-      volumes:
-        - /home/test:/home/test/
-      options: --cpus 1
-    services:
-      redis1:
-        image: redis
-        ports:
-          - 83:41/tcp
-      redis2:
-        image: redis
-        ports:
-          - 84:42/tcp
+jobs:
+  job1:
+    runs-on: [self-hosted, windows]
+    #runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-      - run: echo '${{ toJson(job.container) }}'
-      - run: echo '${{ toJson(job.services.redis1) }}'
-      - run: echo '${{ toJson(job.services.redis2) }}'
+      - id: step1
+        shell: bash
+        run: echo "test=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        shell: bash
+        run: echo "test=world" >> $GITHUB_OUTPUT
+  job2:
+    runs-on: [self-hosted, windows, csd-back]
+    needs: job1
+    steps:
+      - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
