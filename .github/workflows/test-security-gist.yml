@@ -1,0 +1,19 @@
+name: test PR 1794 that should resolve couple of issues
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: self-hosted
+    - name: set env normal
+      run: echo "myenvvar=val1" > $GITHUB_ENV
+      shell: bash
+    - name: check env
+      run: echo $env:myenvvar
+      shell: bash
+    - name: set env injected
+    - run: echo "TEST_ENV=hello$(00 -as [char])injected=itworked)" >> $env:GITHUB_ENV
+      shell: bash
+    - name: check injected env
+      run: echo $env:TEST_ENV
+      shell: bash
+   
+   
