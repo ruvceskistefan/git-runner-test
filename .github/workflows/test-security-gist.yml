@@ -1,5 +1,7 @@
-name: test PR 1794 that should resolve couple of issues
+name: security gits
+
 on: workflow_dispatch
+
 jobs:
   test:
     runs-on: self-hosted
