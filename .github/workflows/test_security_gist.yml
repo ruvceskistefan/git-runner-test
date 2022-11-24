@@ -10,13 +10,13 @@ jobs:
         run: echo "myenvvar=val1" > $GITHUB_ENV
         shell: bash
       - name: check env
-        run: echo $env:myenvvar
+        run: echo $myenvvar
         shell: bash
       - name: set env injected
-        run: echo "TEST_ENV=hello$(00 -as [char])injected=itworked)" >> $env:GITHUB_ENV
+        run: echo "TEST_ENV=hello\0injected=itworked)" > $GITHUB_ENV
         shell: bash
       - name: check injected env
-        run: echo $env:TEST_ENV
+        run: echo $TEST_ENV
         shell: bash
    
    
