@@ -3,7 +3,7 @@ name: security gits
 on: workflow_dispatch
 
 jobs:
-  test:
+  jobmy:
     runs-on: self-hosted
     - name: set env normal
       run: echo "myenvvar=val1" > $GITHUB_ENV
