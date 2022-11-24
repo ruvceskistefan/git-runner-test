@@ -1,6 +1,7 @@
 name: security gits
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   jobmy:
