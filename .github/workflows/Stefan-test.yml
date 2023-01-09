@@ -22,6 +22,6 @@ jobs:
   C:
     runs-on: ubuntu-latest
     needs: [A,B]
-    if: ${{ !cancelled() && contains(needs.*.result, 'success') == 'true' }}
+    if: ${{ !cancelled() && fromJSON(contains(needs.*.result, 'success')) }}
     steps:
       - run: echo C
