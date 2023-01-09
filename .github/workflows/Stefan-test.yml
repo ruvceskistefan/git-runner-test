@@ -21,8 +21,8 @@ jobs:
       - run: echo B
   C:
     runs-on: ubuntu-latest
-    needs: [A,B]
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    needs: [A,B]
     steps:
       - name: Needs test    
         env:
