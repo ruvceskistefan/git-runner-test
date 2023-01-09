@@ -5,7 +5,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: windows-latest
+    runs-on: windows-cuda
     steps:
     - name: Set the value
       id: step_one
