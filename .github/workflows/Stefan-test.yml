@@ -1,6 +1,6 @@
 name: Test
-on:
-  workflow_dispatch:
+on:   
+  push:
 
 jobs:
   D:
@@ -21,11 +21,7 @@ jobs:
       - run: echo B
   C:
     runs-on: ubuntu-latest
-    if: ${{ always() && contains(join(needs.*.result, ','), 'success') == 'true' }}
     needs: [A,B]
+    if: ${{ !cancelled() && contains(needs.*.result, 'success') == 'true' }}
     steps:
-      - name: Needs test    
-        env:
-          NEEDS: ${{ contains(join(needs.*.result, ','), 'success') }}     
-        run: |
-          echo "$NEEDS"
+      - run: echo C
