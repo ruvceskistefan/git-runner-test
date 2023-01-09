@@ -24,4 +24,8 @@ jobs:
     needs: [A,B]
     if: ${{ !cancelled() && contains(join(needs.*.result, ','), 'success') }}
     steps:
-      - run: echo C
+      - name: Needs test    
+        env:
+          NEEDS: ${{ toJSON(needs) }}     
+        run: |
+          echo "$NEEDS"
