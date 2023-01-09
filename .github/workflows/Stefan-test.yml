@@ -26,6 +26,6 @@ jobs:
     steps:
       - name: Needs test    
         env:
-          NEEDS: ${{ toJSON(needs) }}     
+          NEEDS: ${{ join(needs.*.result, ',') }}     
         run: |
           echo "$NEEDS"
