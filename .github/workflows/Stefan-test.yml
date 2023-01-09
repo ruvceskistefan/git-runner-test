@@ -24,4 +24,4 @@ jobs:
     needs: [A,B]
     if: ${{ !cancelled() && success() }}
     steps:
-      - run: echo C
+      - run: echo needs.*.result
