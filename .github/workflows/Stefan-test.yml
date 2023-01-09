@@ -11,7 +11,7 @@ jobs:
   A:
     needs: [D]
     runs-on: ubuntu-latest
-    if: false
+    if: true
     steps:
       - run: echo A
   B:
