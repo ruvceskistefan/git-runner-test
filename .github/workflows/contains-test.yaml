@@ -20,7 +20,7 @@ jobs:
       - run: echo B
   C:
     runs-on: ubuntu-latest
-    if: ${{ always() && contains(needs.*.result, 'success') == 'true' }}
+    if: ${{ always() && contains(needs.*.result, 'success') }}
     needs: [A,B]
     steps:
       - run: echo contains(needs.*.result, 'success')  # output will be false
