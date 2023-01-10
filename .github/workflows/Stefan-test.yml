@@ -3,15 +3,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    runs-on: windows-cuda
+  job1:
+    runs-on: ubuntu-latest
     steps:
-    - name: Set the value
-      id: step_one
-      run: |
-        echo "action_state=yellow" >> $Env:GITHUB_ENV
-    - name: Use the value
-      id: step_two
-      run: |
-        echo '${{ env.action_state }}'
+      - id: out
+        run: echo Job1
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Job2
+      
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Job3
+
+  test-output:
+    if: always() && contains(needs.*.result, 'success') == 'true'
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    env:
+      NEEDS: ${{ toJSON(needs) }}
+      CONDITION: ${{ contains(needs.*.result, 'success') }}
+    steps:
+      - run: |
+          echo "$NEEDS"
+          echo "$CONDITION"
