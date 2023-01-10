@@ -3,18 +3,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  job1:
+  prep:
     runs-on: ubuntu-latest
     steps:
-      - id: out
-        run: echo Job1
+      - run: echo prep
+  job1:
+    needs: prep
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Job1
 
   job2:
+    needs: prep
     runs-on: ubuntu-latest
     steps:
       - run: echo Job2
       
   job3:
+    needs: prep
     runs-on: ubuntu-latest
     steps:
       - run: echo Job3
