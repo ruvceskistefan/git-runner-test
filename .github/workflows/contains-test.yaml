@@ -22,5 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(needs.*.result, 'success') }}
     needs: [A,B]
+    env:
+      NEEDS: ${{ toJSON(needs) }}
+      CONDITION: ${{ contains(needs.*.result, 'success') }}
     steps:
-      - run: echo contains(needs.*.result, 'success')  # output will be false
+      - run: |
+          echo "$NEEDS"
+          echo "$CONDITION"
