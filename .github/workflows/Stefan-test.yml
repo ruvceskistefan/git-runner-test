@@ -27,6 +27,7 @@ jobs:
 
   test-output:
     needs: [job1,job2,job3]
+    if: ${{ always() && contains(needs.*.result, 'success') == 'true' }}
     runs-on: ubuntu-latest
     env:
       NEEDS: ${{ toJSON(needs) }}
