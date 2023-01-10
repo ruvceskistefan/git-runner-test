@@ -8,19 +8,19 @@ jobs:
     steps:
       - run: echo prep
   job1:
-    needs: [prep]
+    needs: prep
     runs-on: ubuntu-latest
     steps:
       - run: echo Job1
 
   job2:
-    needs: [prep]
+    needs: prep
     runs-on: ubuntu-latest
     steps:
       - run: echo Job2
       
   job3:
-    needs: [prep]
+    needs: prep
     runs-on: ubuntu-latest
     steps:
       - run: echo Job3
