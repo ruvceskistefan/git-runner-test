@@ -15,12 +15,14 @@ jobs:
 
   job2:
     needs: prep
+    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo Job2
       
   job3:
     needs: prep
+    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo Job3
