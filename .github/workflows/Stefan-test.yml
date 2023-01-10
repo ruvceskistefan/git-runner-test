@@ -26,7 +26,6 @@ jobs:
       - run: echo Job3
 
   test-output:
-    if: always() && contains(needs.*.result, 'success') == 'true'
     needs: [job1,job2,job3]
     runs-on: ubuntu-latest
     env:
