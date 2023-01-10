@@ -1,0 +1,27 @@
+name: Test
+on:   
+  push:
+
+jobs:
+  D:
+    runs-on: ubuntu-latest
+    if: true
+    steps:
+      - run: echo D
+  A:
+    needs: [D]
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - run: echo A
+  B:
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - run: echo B
+  C:
+    runs-on: ubuntu-latest
+    if: ${{ always() && contains(needs.*.result, 'success') == 'true' }}
+    needs: [A,B]
+    steps:
+      - run: echo contains(needs.*.result, 'success')  # output will be false
