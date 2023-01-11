@@ -34,7 +34,7 @@ jobs:
     if: ${{ always()}}
     env:
       NEEDS: ${{ toJSON(needs) }}
-      CONDITION: ${{ contains(needs.*.result, 'success') == 'false'  }}
+      CONDITION: ${{ contains(needs.*.result, 'success') == false  }}
     steps:
       - run: |
           echo "$NEEDS"
