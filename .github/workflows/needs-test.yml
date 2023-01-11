@@ -32,7 +32,7 @@ jobs:
     needs: [job1,job2,job3]
     env:
       NEEDS: ${{ toJSON(needs) }}
-      CONDITION: ${{ contains(needs.*.result, 'success') == true ? 'bool':'string'  }}
+      CONDITION: ${{ contains(needs.*.result, 'success') == true  }}
     steps:
       - run: |
           echo "$NEEDS"
