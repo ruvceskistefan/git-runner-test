@@ -9,6 +9,7 @@ jobs:
       - run: echo prep
   job1:
     needs: prep
+    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo Job1
@@ -33,7 +34,7 @@ jobs:
     if: ${{ always()}}
     env:
       NEEDS: ${{ toJSON(needs) }}
-      CONDITION: ${{ contains(needs.*.result, 'success') == 'true'  }}
+      CONDITION: ${{ contains(needs.*.result, 'success') == 'false'  }}
     steps:
       - run: |
           echo "$NEEDS"
