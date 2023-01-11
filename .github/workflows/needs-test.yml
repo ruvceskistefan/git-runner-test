@@ -9,7 +9,6 @@ jobs:
       - run: echo prep
   job1:
     needs: prep
-    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo Job1
