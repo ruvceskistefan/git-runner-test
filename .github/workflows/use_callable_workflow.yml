@@ -5,4 +5,9 @@ on:
 
 jobs:
   call-workflow:
-    uses: ruvceskistefan/reusable-workflows/.github/workflows/hello_world.yml@main
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: test
+        env: 
+          TEST: test
+        uses: ruvceskistefan/reusable-workflows/.github/workflows/hello_world.yml@main
