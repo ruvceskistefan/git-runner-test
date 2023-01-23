@@ -6,6 +6,6 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: test call
-      uses: actions/checkout@v2
       run: python3 -u scripts/hello.py
