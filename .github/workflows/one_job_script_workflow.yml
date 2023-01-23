@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test call
-      run: python3 -u scripts/hello.py
+      run: ${{scripts/test.sh}}
