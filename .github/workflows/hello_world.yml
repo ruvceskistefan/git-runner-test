@@ -12,5 +12,5 @@ jobs:
 
     steps:
      - name: C++ test
-       run: ((area=5*5))
+       run: ${{((area=5*5))}}
     
