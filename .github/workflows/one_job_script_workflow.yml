@@ -1,0 +1,10 @@
+name: One job script workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test call
+      run: python3 -u scripts/hello.py
