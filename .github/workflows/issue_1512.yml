@@ -19,5 +19,5 @@ jobs:
 
     steps:
       - run: |
-          echo ${{ matrix.include.os }}
-          echo ${{ matrix.include.version }}
+          echo ${{ matrix.os }}
+          echo ${{ matrix.version }}
