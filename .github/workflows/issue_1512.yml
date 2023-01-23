@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-         bar:
+         include:
           - os: macos-latest
             version: 12
             environment: prod
@@ -19,5 +19,5 @@ jobs:
 
     steps:
       - run: |
-          echo ${{ matrix.bar.os }}
-          echo ${{ matrix.bar.version }}
+          echo ${{ matrix.include.os }}
+          echo ${{ matrix.include.version }}
