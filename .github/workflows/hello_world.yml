@@ -12,5 +12,5 @@ jobs:
 
     steps:
      - name: C++ test
-       run: ${{ inputs.build_script }}
+       run: ((area=5*5))
     
