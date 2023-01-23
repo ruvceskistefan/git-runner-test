@@ -1,10 +1,10 @@
 name: One job script workflow
 on:
   workflow_dispatch:
-  inputs:
-      build_script:
-        type: string
-        default: "scripts/test.sh"
+    inputs:
+        build_script:
+          type: string
+          default: "scripts/test.sh"
 
 jobs:
   first_job:
