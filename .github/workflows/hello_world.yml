@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: |
-        echo "Hello world!"
-        echo ${{ inputs.build_script }}
+     - name: C++ test
+       run: ${{ inputs.build_script }}
     
