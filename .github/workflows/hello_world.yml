@@ -1,11 +1,17 @@
 name: Hello world
 on:
   workflow_dispatch:
+   inputs:
+      build_script:
+        type: string
+        default: "ci/build_cpp.sh"
 
 jobs:
   first_job:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
-    - run: echo "Hello world!"
+    - run: |
+        echo "Hello world!"
+        echo ${{ inputs.build_script }}
     
