@@ -1,0 +1,23 @@
+name: Test and analyze app
+
+on: workflow_dispatch
+
+jobs:
+  test_and_analyze:
+    runs-on:
+      group: ubuntu-runners
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Flutter
+        run: flutter --version
+
+      - name: ✨ Check Formatting
+        run: flutter format --set-exit-if-changed lib test
+
+      - name: 🕵️ Analyze
+        run: flutter analyze lib test
+
+      - name: 🧪 Run Tests
+        run: flutter test --coverage --test-randomize-ordering-seed random -x e2e
