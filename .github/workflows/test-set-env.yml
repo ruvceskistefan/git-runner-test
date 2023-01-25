@@ -8,7 +8,7 @@ jobs:
 
     steps:
      - name: set env
-       run: echo "TEST_ENV-hello$(00 -as (char])injected it worked" >> $env:GITHUB_ENV
+       run: echo "TEST_ENV=hello$(00 -as (char])injected=it worked" >> $env:GITHUB_ENV
      - name: check env
        run: | 
               echo $env:TEST_ENV
