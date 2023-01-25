@@ -10,6 +10,7 @@ jobs:
      - name: set env
        run: echo "TEST_ENV-hello$(00 -as (char])injected it worked" >> $env:GITHUB_ENV
      - name: check env
-       run: | echo Senv: TEST_ENV
-              echo senv:injected
+       run: | 
+              echo $env:TEST_ENV
+              echo $env:injected
        
