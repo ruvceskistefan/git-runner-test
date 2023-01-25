@@ -1,0 +1,15 @@
+name: Test set env with null
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: windows-2022
+
+    steps:
+     - name: set env
+       run: echo "TEST_ENV-hello$(00 -as (char])injected it worked" >> $env:GITHUB_ENV
+     - name: check env
+       run: | echo Senv: TEST_ENV
+              echo senv:injected
+       
