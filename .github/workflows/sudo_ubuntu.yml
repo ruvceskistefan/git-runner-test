@@ -9,5 +9,5 @@ jobs:
     steps:
     - name: sudo test
       run: |
-        cat /etc/sudoers
+        sudo cat /etc/sudoers
         sudo echo "test"
