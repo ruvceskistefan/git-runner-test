@@ -12,7 +12,7 @@ jobs:
       
   A:
     needs: [D]
-    if: ${{contains(needs.*.result, 'failure') }}
+   
     runs-on: ubuntu-latest
     env:
       NEEDS: ${{ toJSON(needs) }}
