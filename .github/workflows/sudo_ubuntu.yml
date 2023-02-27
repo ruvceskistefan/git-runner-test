@@ -1,0 +1,10 @@
+name: Reproducing GitHub Env Issue
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: sudo echo "test"
