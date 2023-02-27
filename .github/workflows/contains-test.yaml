@@ -7,10 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     if: false
     steps:
-      - run: echo D
+      - run: |
+          echo D
+          exit 1
+      
   A:
     needs: [D]
-    if: ${{contains(needs.*.result, 'success') }}
+    if: ${{contains(needs.*.result, 'failure') }}
     runs-on: ubuntu-latest
     env:
       NEEDS: ${{ toJSON(needs) }}
