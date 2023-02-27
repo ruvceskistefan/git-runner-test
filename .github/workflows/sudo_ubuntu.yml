@@ -7,4 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: sudo echo "test"
+    - name: sudo test
+      run: |
+        cat /etc/sudoers
+        sudo echo "test"
