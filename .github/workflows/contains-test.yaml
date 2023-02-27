@@ -5,8 +5,7 @@ on:
 jobs:
   D:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
+    if: false
     steps:
       - run: echo D
   A:
