@@ -1,4 +1,4 @@
-name: Reproducing GitHub Env Issue
+name: Sudo ubuntu-latest
 on:
   workflow_dispatch:
 
