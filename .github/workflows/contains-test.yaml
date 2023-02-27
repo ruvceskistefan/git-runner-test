@@ -11,8 +11,11 @@ jobs:
       - run: echo D
   A:
     needs: [D]
-    if: ${{contains(needs.*.result, 'failure') }}
+    if: ${{contains(needs.*.result, 'success') }}
     runs-on: ubuntu-latest
+    env:
+      NEEDS: ${{ toJSON(needs) }}
+      CONDITION: ${{ contains(needs.*.result, 'success') }}
     steps:
        - run: |
           echo A
