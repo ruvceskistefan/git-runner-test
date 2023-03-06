@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Use variables
       run: |
-        echo ${{ vars }}
+        echo ${{ toJSON(vars) }}
         echo "repository variable : ${{ vars.REPOSITORY_VAR }}"
         echo "organization variable : ${{ vars.ORGANIZATION_VAR }}"
         echo "overridden variable : ${{ vars.OVERRIDE_VAR }}"
