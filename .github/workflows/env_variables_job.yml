@@ -7,14 +7,15 @@ env:
 
 jobs:
   display-variables:
-    name: ${{ vars.JOB_NAME }}
+    name: test# ${{ vars.JOB_NAME }}
     # You can use configuration variables with the `vars` context for dynamic jobs
     # if: ${{ vars.USE_VARIABLES == 'true' }}
-    runs-on: ${{ vars.RUNNER }}
-    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ubuntu-latest # ${{ vars.RUNNER }}
+    # environment: ${{ vars.ENVIRONMENT_STAGE }}
     steps:
     - name: Use variables
       run: |
+        echo ${{ vars }}
         echo "repository variable : ${{ vars.REPOSITORY_VAR }}"
         echo "organization variable : ${{ vars.ORGANIZATION_VAR }}"
         echo "overridden variable : ${{ vars.OVERRIDE_VAR }}"
