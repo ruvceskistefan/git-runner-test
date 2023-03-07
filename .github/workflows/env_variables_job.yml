@@ -11,12 +11,10 @@ jobs:
     # You can use configuration variables with the `vars` context for dynamic jobs
     if: ${{ vars.USE_VARIABLES == 'true' }}
     runs-on: ${{ vars.RUNNER }}
-    # environment: ${{ vars.ENVIRONMENT_STAGE }}
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
     steps:
     - name: Use variables
       run: |
-        echo ${{ toJSON(vars) }}
-        echo ${{ environment }}
         echo ${{ vars.RUNNER }}
         echo "repository variable : ${{ vars.REPOSITORY_VAR }}"
         echo "organization variable : ${{ vars.ORGANIZATION_VAR }}"
