@@ -1,0 +1,18 @@
+name: Reusable
+on:
+  workflow_call:
+    outputs:
+      pass:
+        value: ${{ jobs.pass.result }}
+      fail:
+        value: ${{ jobs.fail.result }}
+
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 1
+  pass:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
