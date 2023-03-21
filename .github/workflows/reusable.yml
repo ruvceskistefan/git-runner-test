@@ -3,9 +3,9 @@ on:
   workflow_call:
     outputs:
       pass:
-        value: ${{ toJSON(jobs) }}
+        value: ${{ toJSON(jobs).pass.result }}
       fail:
-        value: ${{ toJSON(jobs) }}
+        value: ${{ toJSON(jobs).fail.result }}
 
 jobs:
   fail:
