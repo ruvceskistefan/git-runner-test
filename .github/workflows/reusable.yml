@@ -3,7 +3,7 @@ on:
   workflow_call:
     outputs:
       pass:
-        value: ${{ toJSON(needs) }}
+        value: ${{ toJSON(jobs) }}
       fail:
         value: ${{ toJSON(jobs) }}
 
