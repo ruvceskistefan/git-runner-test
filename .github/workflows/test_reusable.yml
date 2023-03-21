@@ -1,0 +1,15 @@
+name: Caller Workflow
+on: workflow_dispatch
+
+jobs:
+  call:
+    uses: ./.github/workflows/reusable.yml
+  print_result:
+    needs: call
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run
+        run: |
+            echo "${{ toJSON(needs.call.outputs.pass) }}"
+            echo "${{ toJSON(needs.call.outputs.fail) }}"
