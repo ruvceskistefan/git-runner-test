@@ -2,14 +2,11 @@ name: Caller Workflow
 on: workflow_dispatch
 
 jobs:
-  call:
+  job1:
     uses: ./.github/workflows/reusable.yml
-  print_result:
-    needs: call
-    if: always()
+
+  job2:
     runs-on: ubuntu-latest
+    needs: job1
     steps:
-      - name: Run
-        run: |
-            echo "${{ toJSON(needs.call.outputs.pass) }}"
-            echo "${{ toJSON(needs.call.outputs.fail) }}"
+      - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
