@@ -49,7 +49,7 @@ jobs:
 
   results:
     runs-on: ubuntu-latest
-    if: {{ always() }}
+    if: always()
     needs:
       - build-one
       - build-two
