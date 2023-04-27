@@ -18,7 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: pre-requisite
     steps:
-      - run: echo "build-one"
+      - run: | 
+          echo "build-one"
+          exit 1
 
   build-two:
     name: build two
