@@ -20,7 +20,7 @@ jobs:
       output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - name: Print Envs
-        run: prinenv
+        run: printenv
       - id: step1
         run: echo "firstword=hello" >> $GITHUB_OUTPUT
       - id: step2
