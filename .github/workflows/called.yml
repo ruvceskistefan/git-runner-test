@@ -1,0 +1,8 @@
+name: Called
+on: workflow_call
+jobs:
+  child:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Print Envs
+         runs: prinenv
