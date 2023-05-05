@@ -1,0 +1,13 @@
+maraplus_stage:
+    runs-on: self-hosted
+    needs: [project_names_wkf, build_odoo]
+    strategy:
+      # We want other test jobs to still run, to see overall picture.
+      fail-fast: false
+      matrix:
+        name: "${{ fromJSON( needs.project_names_wkf.outputs.names_json ) }}"
+    uses: ./.github/workflows/_maraplus.yml
+    with:
+      project: ${{ matrix.name }}
+      mode: stage
+    secrets: inherit # pragma: allowlist secret
