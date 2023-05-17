@@ -10,7 +10,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
         node: [18]
         runOnlyUbuntu:
-          - ${{ github.workspace == '/home/runner/work/github-workspace-conditional-error/github-workspace-conditional-error' }}
+          - ${{ github.workspace == '/home/runner/work/git-runner-test/git-runner-test' }}
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -28,7 +28,7 @@ jobs:
           echo "My event type is: ${{ github.event_name }}"
           echo ${{github.workspace}}
       - name: Check github.workspace full path in conditional
-        if: github.workspace == '/home/runner/work/github-workspace-conditional-error/github-workspace-conditional-error'
+        if: github.workspace == '/home/runner/work/git-runner-test/git-runner-test'
         run: |
           echo "Should only run on Ubuntu: ${{ github.workspace }}"
       - name: Check workspace for macos
