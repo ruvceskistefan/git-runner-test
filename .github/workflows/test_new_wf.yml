@@ -35,6 +35,8 @@ jobs:
           echo "${{contains('\/Users\/runner\/work\/*', github.workspace)}}"
           echo "${{contains('/Users/runner/work/*', github.workspace)}}"
           echo "${{contains('/Users/runner/work/**', github.workspace)}}"
+          echo "${{contains('/Users/runner/work/git-runner-test/*', github.workspace)}}"
+          echo "${{contains('\/Users\/runner\/work\/git-runner-test\/*', github.workspace)}}"
       - name: Check workspace for macos
         if: contains('\/Users\/runner\/work\/**', github.workspace)
         run: |
