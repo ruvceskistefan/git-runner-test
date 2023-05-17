@@ -20,7 +20,7 @@ jobs:
           echo "runOnlyUbuntu: ${{ matrix.runOnlyUbuntu }}"
           echo $JSON
         env:
-          JSON: ${{ toJSON(github) }}
+          JSON: "${{ toJSON(github) }}"
         
       - name: Check event_name event with a contains
         if: contains('workflow_dispatch', github.event_name)
