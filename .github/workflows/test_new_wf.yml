@@ -31,7 +31,7 @@ jobs:
         if: github.workspace == '/home/runner/work/git-runner-test/git-runner-test'
         run: |
           echo "Should only run on Ubuntu: ${{ github.workspace }}"
-          echo "${{contains(github.workspace, '\/Users\/runner\/work\/**',)}}"
+          echo "${{contains(github.workspace, '\/Users\/runner\/work\/**')}}"
           echo "${{contains('\/Users\/runner\/work\/*', github.workspace)}}"
           echo "${{contains('/Users/runner/work/*', github.workspace)}}"
           echo "${{contains('/Users/runner/work/**', github.workspace)}}"
