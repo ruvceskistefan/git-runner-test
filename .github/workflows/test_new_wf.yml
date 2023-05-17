@@ -1,0 +1,44 @@
+name: 'ci'
+
+on: [workflow_dispatch]
+
+jobs:
+  run-ui-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: [18]
+        runOnlyUbuntu:
+          - ${{ github.workspace == '/home/runner/work/github-workspace-conditional-error/github-workspace-conditional-error' }}
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Show github json
+        run: |
+          echo "workspace: ${{ github.workspace }}"
+          echo "runOnlyUbuntu: ${{ matrix.runOnlyUbuntu }}"
+          echo $JSON
+        env:
+          JSON: ${{ toJSON(github) }}
+        
+      - name: Check event_name event with a contains
+        if: contains('push', github.event_name)
+        run: |
+          echo "My event type is: ${{ github.event_name }}"
+      - name: Check github.workspace full path in conditional
+        if: github.workspace == '/home/runner/work/github-workspace-conditional-error/github-workspace-conditional-error'
+        run: |
+          echo "Should only run on Ubuntu: ${{ github.workspace }}"
+      - name: Check workspace for macos
+        if: contains('/Users/runner/work/', github.workspace)
+        run: |
+          echo "I'm running on ubuntu-latest: ${{ matrix.os }}"
+      - name: Check workspace for ubuntu reverse
+        if: contains(github.workspace, '/Users/runner/work/')
+        run: |
+          echo "I'm running on macos-latest: ${{ matrix.os }}"
+      - name: Check workspace for ubuntu
+        if: contains('/home/runner/work/', github.workspace)
+        run: |
+          echo "I'm running on ubuntu-latest: ${{ matrix.os }}"
