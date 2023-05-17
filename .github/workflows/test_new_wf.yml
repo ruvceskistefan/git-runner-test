@@ -32,10 +32,10 @@ jobs:
         run: |
           echo "Should only run on Ubuntu: ${{ github.workspace }}"
       - name: Check workspace for macos
-        if: contains('/Users/runner/work/**', github.workspace)
+        if: contains('\/Users\/runner\/work\/**', github.workspace)
         run: |
           echo "I'm running on ubuntu-latest: ${{ matrix.os }}"
       - name: Check workspace for ubuntu
-        if: contains('/home/runner/work/**', github.workspace)
+        if: contains('\/Users\/runner\/work\/**', github.workspace)
         run: |
           echo "I'm running on ubuntu-latest: ${{ matrix.os }}"
