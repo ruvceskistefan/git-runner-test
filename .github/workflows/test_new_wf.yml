@@ -26,6 +26,7 @@ jobs:
         if: contains('workflow_dispatch', github.event_name)
         run: |
           echo "My event type is: ${{ github.event_name }}"
+          echo ${{github.workspace}}
       - name: Check github.workspace full path in conditional
         if: github.workspace == '/home/runner/work/github-workspace-conditional-error/github-workspace-conditional-error'
         run: |
