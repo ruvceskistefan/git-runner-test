@@ -1,0 +1,19 @@
+on:
+   workflow_call:
+     inputs:
+     
+       TF_MILIEU:
+         required: true
+         type: string
+         description: Name of the tf milieu (environment).
+env:
+   TF_MILIEU: ${{ github.event.inputs.TF_MILIEU }}
+jobs:
+   tf-apply:
+     name: Terraform apply
+     runs-on: ubuntu-latest
+     steps:
+        - name: Checkout
+          run: | 
+            echo "evn: ${{ env.TF_MILIEU }}"    
+            echo "input: ${{ github.event.inputs.TF_MILIEU }}"
