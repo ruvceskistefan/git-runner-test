@@ -1,7 +1,7 @@
+name: a test input
 on:
-   workflow_call:
+    workflow_dispatch:
      inputs:
-     
        TF_MILIEU:
          required: true
          type: string
