@@ -1,0 +1,20 @@
+name: Called workflow
+
+on:
+  workflow_call:
+    inputs:
+      inputA:
+        description: Number input
+        required: true
+        type: number
+      inputB:
+        description: String input
+        required: true
+        type: string
+
+jobs:
+  print_hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: echo "Hello world"
