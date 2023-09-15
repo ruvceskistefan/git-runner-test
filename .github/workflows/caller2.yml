@@ -14,7 +14,7 @@ on:
 
 jobs:
   call_reusable_workflow:
-    uses: ./.github/workflows/called-workflow.yml
+    uses: ./.github/workflows/called2.yml
     with:
       inputA: ${{ inputs.inputA }}
       inputB: ${{ inputs.inputB }}
