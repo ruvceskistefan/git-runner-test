@@ -1,0 +1,27 @@
+
+name: Summary-Composite
+run-name: Summary Composite
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - if: ${{ success() }}
+        shell: bash
+        run: |
+          echo "### Step: 1. Before" >> $GITHUB_STEP_SUMMARY
+      - if: ${{ success() }}
+        shell: bash
+        run: |
+          echo "### Step: 1. After" >> $GITHUB_STEP_SUMMARY
+      - if: ${{ success() }}
+        shell: bash
+        run: |
+          echo "### Step: 2. After" >> $GITHUB_STEP_SUMMARY
+      - if: ${{ success() }}
+        shell: bash
+        run: |
+          echo "### Step: 3. After" >> $GITHUB_STEP_SUMMARY
