@@ -13,6 +13,8 @@ jobs:
         shell: bash
         run: |
           echo "### Step: 1. Before" >> $GITHUB_STEP_SUMMARY
+      - name: Checkout source code from Github
+        uses: actions/checkout@v3
       - if: ${{ success() }}
         uses: ./composite
       - if: ${{ success() }}
