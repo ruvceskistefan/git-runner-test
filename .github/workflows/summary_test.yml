@@ -14,6 +14,8 @@ jobs:
         run: |
           echo "### Step: 1. Before" >> $GITHUB_STEP_SUMMARY
       - if: ${{ success() }}
+        uses: composite
+      - if: ${{ success() }}
         shell: bash
         run: |
           echo "### Step: 1. After" >> $GITHUB_STEP_SUMMARY
