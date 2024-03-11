@@ -1,7 +1,7 @@
 name: Containes test 2
 
 on:
-  workflow_call:
+  workflow_dispatch:
       inputs:
         cleanup:
           default: false
