@@ -1,3 +1,4 @@
+name: Containes test
 env:
   CLEANUP: ${{ inputs.cleanup || false }}
 
