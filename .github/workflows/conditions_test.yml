@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        if: env.CLEANUP != "false"
+        if: ${{ env.CLEANUP }}
         env: 
           TEST: ${{ env.CLEANUP }}
           TEST2: ${{ github.event.inputs.cleanup}}
