@@ -19,4 +19,4 @@ jobs:
         if: env.CLEANUP
         run: |
           echo A
-          echo "$env.CLEANUP"
+          echo "$inputs"
