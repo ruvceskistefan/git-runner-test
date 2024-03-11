@@ -1,0 +1,21 @@
+env:
+  CLEANUP: ${{ inputs.cleanup || false }}
+
+on:
+  workflow_call:
+      inputs:
+        cleanup:
+          default: false
+          description: Whether to run clean-up job
+          required: false
+          type: boolean
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        if: env.CLEANUP
+        run: |
+          echo A
+          echo "$env.CLEANUP"
