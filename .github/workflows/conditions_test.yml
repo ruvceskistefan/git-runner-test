@@ -1,6 +1,4 @@
 name: Containes test 2
-env:
-  CLEANUP: ${{ inputs.cleanup || false }}
 
 on:
   workflow_call:
@@ -10,6 +8,8 @@ on:
           description: Whether to run clean-up job
           required: false
           type: boolean
+env:
+  CLEANUP: ${{ inputs.cleanup || false }}
 
 jobs:
   cleanup:
