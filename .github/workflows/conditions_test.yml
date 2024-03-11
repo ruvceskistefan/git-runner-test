@@ -9,7 +9,7 @@ on:
           required: false
           type: boolean
 env:
-  CLEANUP: ${{ inputs.cleanup || false }}
+  CLEANUP: ${{ github.event.inputs.cleanup || false }}
 
 jobs:
   cleanup:
@@ -19,4 +19,4 @@ jobs:
         if: env.CLEANUP
         run: |
           echo A
-          echo "$inputs"
+          echo "$github.event.inputs"
