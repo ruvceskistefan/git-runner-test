@@ -17,6 +17,10 @@ jobs:
     steps:
       - name: test
         if: env.CLEANUP
+        env: 
+          TEST: ${{ env.CLEANUP }}
+          TEST2: ${{ ${{ github.event.inputs.cleanup}} }}
         run: |
           echo A
-          echo "$github.event.inputs"
+          echo "$TEST"
+          echo "$TEST2"
